@@ -11,7 +11,7 @@ class Users::SessionsController < Devise::SessionsController
     else
       flash.now[:error] = "ログインに失敗しました"
       self.resource = resource_class.new
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_content
     end
   end
 
