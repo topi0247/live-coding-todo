@@ -20,9 +20,14 @@
     javascript_importmap_tags %>
   </head>
 
-  <body class="bg-primary text-white">
-    <div class="flex min-h-screen w-full flex-col">
+  <body class="bg-primary-dark text-white">
+    <div class="relative flex min-h-screen w-full flex-col">
       <header><%= render "shared/header" %></header>
+      <div
+        class="fixed right-0 top-20 flex w-full max-w-xs items-center rounded-lg text-gray-500 shadow-sm"
+      >
+        <%= render "shared/flash_message" %>
+      </div>
       <main class="flex w-full grow items-center justify-center px-10 py-2">
         <%= yield %>
       </main>
