@@ -1,7 +1,17 @@
-<div
-  id="toast-success"
-  class="bg-primary animate-flash-message border-theme flex w-full max-w-xs items-center rounded-lg border-l-4 p-4 text-white shadow-sm"
-  role="alert"
->
-  <span class="ms-3 text-sm font-normal">ここにフラッシュメッセージ</span>
-</div>
+<% if flash[:success] %>
+  <div
+    id="toast-success"
+    class="bg-primary animate-flash-message border-theme flex w-full max-w-xs items-center rounded-lg border-l-4 p-4 text-white shadow-sm"
+    role="alert"
+  >
+    <span class="ms-3 text-sm font-normal"><%= flash[:success] %></span>
+  </div>
+<% elsif flash[:error] %>
+  <div
+    id="toast-error"
+    class="bg-primary animate-flash-message border-red-400 flex w-full max-w-xs items-center rounded-lg border-l-4 p-4 text-white shadow-sm"
+    role="alert"
+  >
+    <span class="ms-3 text-sm font-normal"><%= flash[:error] %></span>
+  </div>
+<% end %>
