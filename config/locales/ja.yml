@@ -1,4 +1,11 @@
 ja:
+  flash:
+    users:
+      registrations:
+        create:
+          success: "アカウント登録に成功しました"
+          error: "アカウント登録に失敗しました"
+          
   activerecord:
     errors:
       models:

@@ -15,8 +15,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     yield resource if block_given?
 
     if resource.persisted?
-        sign_up(resource_name, resource)
-        redirect_to root_path, success: "アカウント登録に成功しました"
+      sign_up(resource_name, resource)
+      redirect_to root_path, success: "アカウント登録に成功しました"
     else
       clean_up_passwords resource
       set_minimum_password_length
@@ -27,14 +27,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
-
-  def after_inactive_sign_up_path_for(resource)
+  def after_inactive_sign_up_path_for(_resource)
     root_path
   end
 
   private
 
   def sign_up_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.expect(user: %i[name email password password_confirmation])
   end
 end
