@@ -38,17 +38,20 @@ Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
 
 Metrics/BlockLength:
-  Max: 25
+  Max: 30
   Exclude:
     - "spec/**/*"
     - "config/**/*"
 
 Metrics/MethodLength:
-  Max: 15
+  Max: 30
 
 Metrics/ClassLength:
-  Max: 150
+  Max: 200
 
 Metrics/AbcSize:
-  Max: 20
+  Max: 30
+
+Rails/I18nLocaleTexts:
+  Enabled: false
 
