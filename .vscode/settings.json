@@ -5,7 +5,7 @@
     "*.html.erb": "erb"
   },
   "[erb]": {
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
     "editor.detectIndentation": false
