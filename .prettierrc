@@ -1,0 +1,16 @@
+{
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.erb",
+        "*.html.erb"
+      ],
+      "options": {
+        "parser": "html"
+      }
+    }
+  ]
+}
