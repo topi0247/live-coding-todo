@@ -1,4 +1,7 @@
 {
+  "printWidth": 120,
+  "tabWidth": 2,
+  "useTabs": false,
   "plugins": [
     "prettier-plugin-tailwindcss"
   ],
@@ -9,7 +12,13 @@
         "*.html.erb"
       ],
       "options": {
-        "parser": "html"
+        "parser": "html",
+        "printWidth": 120,
+        "tabWidth": 2,
+        "useTabs": false,
+        "htmlWhitespaceSensitivity": "ignore",
+        "embeddedLanguageFormatting": "auto",
+        "bracketSameLine": false
       }
     }
   ]

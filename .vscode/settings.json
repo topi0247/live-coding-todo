@@ -4,11 +4,19 @@
     "*.erb": "erb",
     "*.html.erb": "erb"
   },
-  "prettier.documentSelectors": [
-    "**/*.erb",
-    "**/*.html.erb"
-  ],
   "[erb]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

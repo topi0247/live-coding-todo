@@ -7,7 +7,8 @@
   --color-gray: #4a4c56;
   --color-cation: #d54a4a;
   --color-theme: #b6ff51;
-  ----default-font-family: "Noto Sans JP", sans-serif;
+  --default-font-family: "Noto Sans JP", sans-serif;
+  --default-font-weight: 400;
 
   --animate-flash-message: flash-message 3s ease-in-out forwards;
 
