@@ -12,5 +12,6 @@ module App
     config.load_defaults 8.0
     config.autoload_lib(ignore: %w[assets tasks])
     config.generators.system_tests = nil
+    config.i18n.default_locale = :ja
   end
 end
