@@ -2,10 +2,7 @@
   <h1 class="text-theme text-2xl font-bold italic">TOPI LOG</h1>
   <nav>
     <ul class="flex items-center justify-center space-x-4">
-      <li>
-        <%= link_to "ログイン", "#", class: "inline-block bg-theme rounded-full
-        px-5 py-1 text-primary font-semibold" %>
-      </li>
+      <% if user_signed_in? %>
       <li>
         <%= button_to "ログアウト", "#", class: "inline-block border-2
         border-theme rounded-full px-5 py-1 text-theme font-semibold" %>
@@ -14,6 +11,12 @@
         <%= link_to "マイページ", "#", class: "inline-block bg-theme
         rounded-full px-5 py-1 text-primary font-semibold" %>
       </li>
+      <% else %>
+        <li>
+          <%= link_to "ログイン", "#", class: "inline-block bg-theme rounded-full
+          px-5 py-1 text-primary font-semibold" %>
+        </li>
+      <% end %>
     </ul>
   </nav>
 </div>
