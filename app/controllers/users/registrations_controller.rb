@@ -21,7 +21,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
       clean_up_passwords resource
       set_minimum_password_length
       flash.now[:error] = "アカウント登録に失敗しました"
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_content
+    end
+  end
+
+  def update
+    if current_user.update(update_params)
+      redirect_to edit_user_registration_path, success: "アカウント情報の更新に成功しました"
+    else
+      flash.now[:error] = "アカウント情報の更新に失敗しました"
+      render :edit, status: :unprocessable_content
     end
   end
 
@@ -29,5 +38,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def sign_up_params
     params.expect(user: %i[name email password password_confirmation])
+  end
+
+  def update_params
+    params.expect(user: %i[name email])
   end
 end
