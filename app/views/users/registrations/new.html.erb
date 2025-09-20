@@ -6,6 +6,7 @@
         <div>
           <%= f.label :name %><span class="text-red-400">*</span>
         </div>
+        <%= field_error_message(resource, :name) %>
         <%= f.text_field :name, class: "bg-white rounded-lg p-2 text-gray outline-none focus:ring-2 focus:ring-theme", placeholder: "example name", required: true %>
       </div>
 
@@ -13,6 +14,7 @@
         <div>
           <%= f.label :email %><span class="text-red-400">*</span>
         </div>
+        <%= field_error_message(resource, :email) %>
         <%= f.email_field :email, class: "bg-white rounded-lg p-2 text-gray outline-none focus:ring-2 focus:ring-theme", placeholder: "example@example.com", required: true %>
       </div>
 
@@ -20,6 +22,7 @@
         <div>
           <%= f.label :password %><span class="text-red-400">*</span>
         </div>
+        <%= field_error_message(resource, :password) %>
         <%= f.password_field :password, class: "bg-white rounded-lg p-2 text-gray outline-none focus:ring-2 focus:ring-theme", placeholder: "6文字以上", required: true %>
       </div>
 
@@ -27,6 +30,7 @@
         <div>
           <%= f.label :password_confirmation %><span class="text-red-400">*</span>
         </div>
+        <%= field_error_message(resource, :password_confirmation) %>
         <%= f.password_field :password_confirmation, class: "bg-white rounded-lg p-2 text-gray outline-none focus:ring-2 focus:ring-theme", placeholder: "確認用パスワード", required: true %>
       </div>
 
