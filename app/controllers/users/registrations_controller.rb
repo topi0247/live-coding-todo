@@ -27,10 +27,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
-  def after_inactive_sign_up_path_for(_resource)
-    root_path
-  end
-
   private
 
   def sign_up_params
