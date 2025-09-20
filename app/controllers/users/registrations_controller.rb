@@ -10,18 +10,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     super
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to root_path, success: "アカウントを登録しました"
-    else
-      flash.now[:error] = "アカウントの登録に失敗しました"
-      render :new, status: :unprocessable_entity
-    end
   end
 
   private
 
-  def user_params
+  def sign_up_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
