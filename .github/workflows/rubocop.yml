@@ -1,0 +1,33 @@
+name: RuboCop
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3.0
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Run RuboCop
+        run: bundle exec rubocop --format github
+
+      - name: Annotate code issues
+        if: failure()
+        run: |
+          echo "RuboCop found style violations."
+          echo "Please run 'bundle exec rubocop -A' to auto-fix issues."
