@@ -19,6 +19,4 @@ class Users::SessionsController < Devise::SessionsController
     sign_out(resource_name)
     redirect_to new_user_session_path, success: "ログアウトしました"
   end
-
-
 end

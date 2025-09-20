@@ -25,8 +25,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  protected
-
   private
 
   def sign_up_params
