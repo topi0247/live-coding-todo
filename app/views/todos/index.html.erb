@@ -1,0 +1,15 @@
+<div class="grid grid-cols-3 w-[1040px] mx-8 gap-x-5 h-[600px]">
+  <article class="p-4 bg-primary rounded-xl flex flex-col gap-y-4 overflow-auto relative">
+    <h1>To do</h1>
+    <div class="grid grid-cols-1 gap-y-4 overflow-y-auto">
+      <%= render @todos %>
+    </div>
+    <%= link_to "+Add item", new_todo_path, class: "sticky bottom-0" %>
+  </article>
+  <article class="bg-primary rounded-xl p-4">
+    <h1>Progress</h1>
+  </article>
+  <article class="bg-primary rounded-xl p-4">
+    <h1>Done</h1>
+  </article>
+</div>

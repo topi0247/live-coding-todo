@@ -1,0 +1,5 @@
+<section class="bg-[#2A2F35] p-3 flex flex-col gap-y-1">
+  <h2 class="font-bold underline text-lg truncate"><%= todo.title %></h2>
+  <p class="text-gray-light truncate"><%= todo.body %></p>
+  <p class="text-gray-light truncate mt-1"><%= todo.created_at.in_time_zone('Tokyo').strftime("%Y/%m/%d") %> <%= todo.user.name %></p>
+</section>
