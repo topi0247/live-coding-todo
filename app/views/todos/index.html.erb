@@ -1,15 +1,38 @@
-<div class="grid grid-cols-3 w-[1040px] mx-8 gap-x-5 h-[600px]">
-  <article class="p-4 bg-primary rounded-xl flex flex-col gap-y-4 overflow-auto relative">
-    <h1>To do</h1>
-    <div class="grid grid-cols-1 gap-y-4 overflow-y-auto">
-      <%= render @todos %>
+<div class="mx-8 grid w-[1040px] grid-cols-3 gap-x-5">
+  <article class="bg-primary relative rounded-xl">
+    <div class="flex h-[640px] flex-col px-4">
+      <h1 class="py-4">To do</h1>
+      <div class="flex h-full flex-col gap-y-4 overflow-y-auto pb-4">
+        <% @todos.each do |todo| %> <%= render "todos/todo", todo: todo %> <% end %>
+      </div>
     </div>
-    <%= link_to "+Add item", new_todo_path, class: "sticky bottom-0" %>
+    <div class="bg-primary relative z-10 rounded-b-xl px-6 py-4 text-lg shadow-[0_0_34px_#000000]">
+      <%= link_to "+ Add item", new_todo_path, class: "inline-block w-full hover:opacity-70 transition-all text-theme "
+      %>
+    </div>
   </article>
-  <article class="bg-primary rounded-xl p-4">
-    <h1>Progress</h1>
+  <article class="bg-primary relative rounded-xl">
+    <div class="flex h-[640px] flex-col px-4">
+      <h1 class="py-4">Progress</h1>
+      <div class="flex h-full flex-col gap-y-4 overflow-y-auto pb-4">
+        <% @progress_todos.each do |todo| %> <%= render "todos/todo", todo: todo %> <% end %>
+      </div>
+    </div>
+    <div class="bg-primary relative z-10 rounded-b-xl px-6 py-4 text-lg shadow-[0_0_34px_#000000]">
+      <%= link_to "+ Add item", new_todo_path, class: "inline-block w-full hover:opacity-70 transition-all text-theme"
+      %>
+    </div>
   </article>
-  <article class="bg-primary rounded-xl p-4">
-    <h1>Done</h1>
+  <article class="bg-primary relative rounded-xl">
+    <div class="flex h-[640px] flex-col px-4">
+      <h1 class="py-4">Done</h1>
+      <div class="flex h-full flex-col gap-y-4 overflow-y-auto pb-4">
+        <% @done_todos.each do |todo| %> <%= render "todos/todo", todo: todo %> <% end %>
+      </div>
+    </div>
+    <div class="bg-primary relative z-10 rounded-b-xl px-6 py-4 text-lg shadow-[0_0_34px_#000000]">
+      <%= link_to "+ Add item", new_todo_path, class: "inline-block w-full hover:opacity-70 transition-all text-theme"
+      %>
+    </div>
   </article>
 </div>
