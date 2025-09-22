@@ -1,5 +1,10 @@
 class TodosController < ApplicationController
-  def index; end
+  def index
+    todos = Todo.includes(:status).order(created_at: :asc)
+    @todos = todos.where(status: { name: "To do" })
+    @progress_todos = todos.where(status: { name: "Progress" })
+    @done_todos = todos.where(status: { name: "Done" })
+  end
 
   def show; end
 
