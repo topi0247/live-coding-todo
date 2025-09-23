@@ -26,5 +26,6 @@ group :development do
   gem "web-console"
 end
 
+gem "acts_as_list"
 gem "devise", "~> 4.9"
 gem "devise-i18n"

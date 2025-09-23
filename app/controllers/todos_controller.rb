@@ -1,9 +1,8 @@
 class TodosController < ApplicationController
   def index
-    todos = Todo.includes(:status).order(created_at: :asc)
-    @todos = todos.where(status: { name: "To do" })
-    @progress_todos = todos.where(status: { name: "Progress" })
-    @done_todos = todos.where(status: { name: "Done" })
+    @todos = Status.includes(:todos).find_by(name: "To do").todos
+    @progress_todos = Status.includes(:todos).find_by(name: "Progress").todos
+    @done_todos = Status.includes(:todos).find_by(name: "Done").todos
   end
 
   def show; end
@@ -17,6 +16,18 @@ class TodosController < ApplicationController
   def update; end
 
   def destroy; end
+
+  def increment_position
+    todo = Todo.find(params[:id])
+    todo.move_higher
+    redirect_to root_path
+  end
+
+  def decrement_position
+    todo = Todo.find(params[:id])
+    todo.move_lower
+    redirect_to root_path
+  end
 
   private
 
