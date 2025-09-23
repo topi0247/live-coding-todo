@@ -28,3 +28,4 @@ end
 
 gem "devise", "~> 4.9"
 gem "devise-i18n"
+gem 'acts_as_list'
