@@ -17,6 +17,12 @@ class TodosController < ApplicationController
 
   def destroy; end
 
+  def increment_position
+    todo = Todo.find(params[:id])
+    todo.move_higher
+    redirect_to root_path
+  end
+
   def decrement_position
     todo = Todo.find(params[:id])
     todo.move_lower

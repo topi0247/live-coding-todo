@@ -7,7 +7,7 @@
     </p>
   </div>
   <div class="flex w-1/6 flex-col items-center justify-center gap-y-2">
-    <%= link_to "▲", "#", class: "text-theme" %> <%= link_to "▼", decrement_position_todo_path(todo), data: {
-    turbo_method: :patch }, class: "text-theme" %>
+    <%= link_to "▲", increment_position_todo_path(todo), data: { turbo_method: :patch }, class: "text-theme" %> <%=
+    link_to "▼", decrement_position_todo_path(todo), data: { turbo_method: :patch }, class: "text-theme" %>
   </div>
 </section>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :todos, except: %i[index] do
     member do
       patch :decrement_position
+      patch :increment_position
     end
   end
 end
