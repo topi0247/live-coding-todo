@@ -1,16 +1,22 @@
 {
   "editor.formatOnSave": true,
+  "prettier.documentSelectors": [
+    "**/*.erb",
+    "**/*.html.erb"
+  ],
   "files.associations": {
     "*.erb": "erb",
     "*.html.erb": "erb"
   },
   "[erb]": {
     "editor.formatOnSave": true,
-    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.autoIndent": "advanced",
     "editor.insertSpaces": true,
-    "editor.detectIndentation": false
+    "editor.tabSize": 2
   },
   "[html]": {
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[css]": {

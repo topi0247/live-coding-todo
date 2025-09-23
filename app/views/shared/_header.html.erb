@@ -4,18 +4,18 @@
     <ul class="flex items-center justify-center space-x-4">
       <% if user_signed_in? %>
       <li>
-        <%= link_to "ログアウト", destroy_user_session_path, class: "border-2
-        border-theme rounded-full px-5 py-1 text-theme font-semibold", data: { turbo_method: :delete } %>
+        <%= link_to "ログアウト", destroy_user_session_path, class: "border-2 border-theme rounded-full px-5 py-1
+        text-theme font-semibold", data: { turbo_method: :delete } %>
       </li>
       <li>
-        <%= link_to "マイページ", edit_user_registration_path, class: "bg-theme
-        rounded-full px-5 py-1 text-primary font-semibold" %>
+        <%= link_to "マイページ", edit_user_registration_path, class: "bg-theme rounded-full px-5 py-1 text-primary
+        font-semibold" %>
       </li>
       <% else %>
-        <li>
-          <%= link_to "ログイン", new_user_session_path, class: "bg-theme rounded-full
-          px-5 py-1 text-primary font-semibold" %>
-        </li>
+      <li>
+        <%= link_to "ログイン", new_user_session_path, class: "bg-theme rounded-full px-5 py-1 text-primary
+        font-semibold" %>
+      </li>
       <% end %>
     </ul>
   </nav>
