@@ -2,7 +2,7 @@
   <article class="bg-primary relative rounded-xl">
     <div class="flex h-[640px] flex-col px-4">
       <h1 class="py-4">To do</h1>
-      <div class="flex h-full flex-col gap-y-4 overflow-y-auto pb-4">
+      <div class="no-scrollbar flex h-full flex-col gap-y-4 overflow-y-auto pb-4">
         <% @todos.each do |todo| %> <%= render "todos/todo", todo: todo %> <% end %>
       </div>
     </div>
@@ -14,7 +14,7 @@
   <article class="bg-primary relative rounded-xl">
     <div class="flex h-[640px] flex-col px-4">
       <h1 class="py-4">Progress</h1>
-      <div class="flex h-full flex-col gap-y-4 overflow-y-auto pb-4">
+      <div class="no-scrollbar flex h-full flex-col gap-y-4 overflow-y-auto pb-4">
         <% @progress_todos.each do |todo| %> <%= render "todos/todo", todo: todo %> <% end %>
       </div>
     </div>
@@ -26,7 +26,7 @@
   <article class="bg-primary relative rounded-xl">
     <div class="flex h-[640px] flex-col px-4">
       <h1 class="py-4">Done</h1>
-      <div class="flex h-full flex-col gap-y-4 overflow-y-auto pb-4">
+      <div class="no-scrollbar flex h-full flex-col gap-y-4 overflow-y-auto pb-4">
         <% @done_todos.each do |todo| %> <%= render "todos/todo", todo: todo %> <% end %>
       </div>
     </div>
