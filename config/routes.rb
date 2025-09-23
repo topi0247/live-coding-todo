@@ -7,5 +7,9 @@ Rails.application.routes.draw do
                        sessions: "users/sessions",
                        registrations: "users/registrations"
                      }
-  resources :todos, except: %i[index]
+  resources :todos, except: %i[index] do
+    member do
+      patch :decrement_position
+    end
+  end
 end

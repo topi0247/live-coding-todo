@@ -18,6 +18,10 @@ class TodosController < ApplicationController
 
   def destroy; end
 
+  def decrement_position
+    redirect_to root_path
+  end
+
   private
 
   def todo_params
